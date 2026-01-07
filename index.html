@@ -22,12 +22,6 @@
                 <a href="#essays" class="nav-link">Essays</a>
                 <a href="#about" class="nav-link">About</a>
             </div>
-            <button class="btn-primary" onclick="showAddEssayModal()">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Add Essay
-            </button>
         </div>
     </nav>
 
@@ -45,7 +39,6 @@
                         <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <button class="btn-hero-secondary" onclick="showAddEssayModal()">Submit Your Essay</button>
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
@@ -96,8 +89,7 @@
             <div class="empty-state" id="emptyState" style="display: none;">
                 <div class="empty-icon">📝</div>
                 <h3>No Essays Found</h3>
-                <p>Start by adding your first essay to the collection.</p>
-                <button class="btn-primary" onclick="showAddEssayModal()">Add Your First Essay</button>
+                <p>Try adjusting your search or filter criteria.</p>
             </div>
         </div>
     </section>
@@ -106,32 +98,18 @@
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">About This Platform</h2>
-                    <p class="about-description">This platform serves as a digital repository for English essays written by students. It provides a space to showcase academic writing, share ideas, and inspire fellow learners.</p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">✍️</div>
-                            <div>
-                                <h4>Easy Publishing</h4>
-                                <p>Submit and manage your essays with ease</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">📚</div>
-                            <div>
-                                <h4>Organized Collection</h4>
-                                <p>Browse essays by category and topic</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🎓</div>
-                            <div>
-                                <h4>Academic Excellence</h4>
-                                <p>Learn from quality student writing</p>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="section-title">About This Collection</h2>
+                
+                <div class="about-text-block">
+                    <p class="about-intro">Welcome to our curated collection of academic essays from IT0502 students. This platform showcases critical thinking and scholarly excellence at the intersection of technology, society, and education.</p>
+                    
+                    <p class="about-description">Each essay explores contemporary digital issues—from algorithmic psychology to cloud computing in education—demonstrating analytical depth and comprehensive research skills.</p>
+                </div>
+
+                <div class="about-text-block">
+                    <p class="about-mission">Our mission is to bridge academic writing with real-world relevance. These essays contribute to important conversations about the digital society we're building together.</p>
+                    
+                    <p class="about-closing">Browse our collection and discover thought-provoking insights on AI ethics, the future of work, and educational transformation.</p>
                 </div>
             </div>
         </div>

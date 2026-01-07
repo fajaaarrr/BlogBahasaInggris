@@ -426,8 +426,8 @@ body {
 
 .essays-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
 }
 
 .essay-card {
@@ -567,58 +567,102 @@ body {
 
 /* About Section */
 .about-section {
-    padding: 4rem 2rem;
-    background: white;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, rgba(254, 176, 93, 0.03) 0%, rgba(90, 122, 205, 0.03) 100%);
 }
 
 .about-content {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.about-description {
-    font-size: 1.15rem;
-    color: var(--color-text-secondary);
-    line-height: 1.8;
+.about-content .section-title {
+    text-align: center;
     margin-bottom: 3rem;
 }
 
-.about-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.about-text-block {
+    margin-bottom: 3.5rem;
 }
 
-.feature-item {
-    display: flex;
-    gap: 1.25rem;
-    padding: 1.5rem;
-    background: var(--color-bg-secondary);
-    border-radius: var(--radius-md);
-    transition: var(--transition-base);
+.about-intro {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.feature-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.feature-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-}
-
-.feature-item h4 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--color-secondary);
-}
-
-.feature-item p {
+.about-description {
+    font-size: 1.1rem;
     color: var(--color-text-secondary);
-    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 0;
+    text-align: center;
 }
+
+.categories-section {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 3.5rem;
+}
+
+.subsection-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.category-description {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.category-description:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.category-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.category-text {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.about-mission {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.about-closing {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: center;
+}
+
 
 /* Footer */
 .footer {
