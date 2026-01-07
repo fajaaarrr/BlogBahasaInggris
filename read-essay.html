@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Read Essay - English Essay Blog</title>
+    <meta name="description" content="Read full essay content">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .read-page {
+            min-height: 100vh;
+            background: var(--color-bg-primary);
+            padding-top: 80px;
+        }
+
+        .read-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: var(--transition-base);
+        }
+
+        .back-button:hover {
+            color: var(--color-primary);
+        }
+
+        .essay-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .essay-category {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .essay-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .essay-metadata {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+        }
+
+        .metadata-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .metadata-divider {
+            width: 4px;
+            height: 4px;
+            background: var(--color-text-light);
+            border-radius: 50%;
+        }
+
+        .essay-body {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 3rem;
+        }
+
+        .essay-content {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-text-primary);
+            white-space: pre-wrap;
+        }
+
+        .essay-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .essay-actions-bottom {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-action {
+            padding: 1rem 2rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .btn-edit {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-edit:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(254, 176, 93, 0.4);
+        }
+
+        .btn-delete {
+            background: transparent;
+            color: #dc3545;
+            border: 2px solid #dc3545;
+        }
+
+        .btn-delete:hover {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-back-bottom {
+            background: transparent;
+            color: var(--color-secondary);
+            border: 2px solid var(--color-secondary);
+        }
+
+        .btn-back-bottom:hover {
+            background: var(--color-secondary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .essay-title {
+                font-size: 2rem;
+            }
+
+            .essay-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .essay-content {
+                font-size: 1.05rem;
+            }
+
+            .essay-actions-bottom {
+                flex-direction: column;
+            }
+
+            .btn-action {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1 class="brand-title">Essay<span class="brand-accent">Blog</span></h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#essays" class="nav-link">Essays</a>
+                <a href="index.html#about" class="nav-link">About</a>
+            </div>
+            <button class="btn-primary" onclick="window.location.href='index.html'">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 8L1 8M1 8L8 15M1 8L8 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Home
+            </button>
+        </div>
+    </nav>
+
+    <!-- Read Page Content -->
+    <div class="read-page">
+        <div class="read-container">
+            <a href="index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Essays
+            </a>
+
+            <div class="essay-header">
+                <div class="essay-category" id="essayCategory">Loading...</div>
+                <h1 class="essay-title" id="essayTitle">Loading Essay...</h1>
+                <div class="essay-metadata">
+                    <div class="metadata-item">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 15.75V14.25C15 13.4544 14.6839 12.6913 14.1213 12.1287C13.5587 11.5661 12.7956 11.25 12 11.25H6C5.20435 11.25 4.44129 11.5661 3.87868 12.1287C3.31607 12.6913 3 13.4544 3 14.25V15.75M12 5.25C12 6.90685 10.6569 8.25 9 8.25C7.34315 8.25 6 6.90685 6 5.25C6 3.59315 7.34315 2.25 9 2.25C10.6569 2.25 12 3.59315 12 5.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span id="essayAuthor">Unknown Author</span>
+                    </div>
+                    <div class="metadata-divider"></div>
+                    <div class="metadata-item">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 1.5V4.5M6 1.5V4.5M2.25 7.5H15.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span id="essayDate">Unknown Date</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="essay-body">
+                <div class="essay-content" id="essayContent">
+                    Loading essay content...
+                </div>
+            </div>
+
+            <div class="essay-actions-bottom">
+                <button class="btn-action btn-back-bottom" onclick="window.location.href='index.html'">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 9H3M3 9L9 15M3 9L9 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back to Essays
+                </button>
+                <button class="btn-action btn-edit" onclick="editEssay()">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.75 2.25C12.9489 2.05109 13.1843 1.89266 13.4433 1.78373C13.7022 1.6748 13.9796 1.61768 14.26 1.61768C14.5404 1.61768 14.8178 1.6748 15.0767 1.78373C15.3357 1.89266 15.5711 2.05109 15.77 2.25C15.9689 2.44891 16.1273 2.68426 16.2363 2.94323C16.3452 3.2022 16.4023 3.47961 16.4023 3.76C16.4023 4.04039 16.3452 4.3178 16.2363 4.57677C16.1273 4.83574 15.9689 5.07109 15.77 5.27L5.77 15.27L1.5 16.5L2.73 12.23L12.75 2.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Edit Essay
+                </button>
+                <button class="btn-action btn-delete" onclick="deleteEssay()">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.25 4.5H3.75H15.75M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Delete Essay
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get essay ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const essayId = parseInt(urlParams.get('id'));
+
+        // Load essay data
+        function loadEssay() {
+            const stored = localStorage.getItem('essays');
+            if (!stored) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const essays = JSON.parse(stored);
+            const essay = essays.find(e => e.id === essayId);
+
+            if (!essay) {
+                alert('Essay not found!');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Populate page with essay data
+            document.getElementById('pageTitle').textContent = essay.title + ' - English Essay Blog';
+            document.getElementById('essayCategory').textContent = essay.category;
+            document.getElementById('essayTitle').textContent = essay.title;
+            document.getElementById('essayAuthor').textContent = essay.author;
+            document.getElementById('essayDate').textContent = formatDate(essay.date);
+            document.getElementById('essayContent').textContent = essay.content;
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // Edit essay
+        function editEssay() {
+            // Store the essay ID to edit and redirect to home page
+            sessionStorage.setItem('editEssayId', essayId);
+            window.location.href = 'index.html?edit=' + essayId;
+        }
+
+        // Delete essay
+        function deleteEssay() {
+            if (!confirm('Are you sure you want to delete this essay? This action cannot be undone.')) {
+                return;
+            }
+
+            const stored = localStorage.getItem('essays');
+            if (!stored) return;
+
+            let essays = JSON.parse(stored);
+            essays = essays.filter(e => e.id !== essayId);
+            localStorage.setItem('essays', JSON.stringify(essays));
+
+            alert('Essay deleted successfully!');
+            window.location.href = 'index.html';
+        }
+
+        // Load essay on page load
+        document.addEventListener('DOMContentLoaded', loadEssay);
+    </script>
+</body>
+</html>

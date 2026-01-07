@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Essay Blog - Student Essays Collection</title>
+    <meta name="description" content="A collection of English essays written by students, featuring various topics and academic writing styles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1 class="brand-title">Essay<span class="brand-accent">Blog</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#essays" class="nav-link">Essays</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <button class="btn-primary" onclick="showAddEssayModal()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Add Essay
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Academic Excellence</div>
+            <h1 class="hero-title">Explore Student<br><span class="gradient-text">English Essays</span></h1>
+            <p class="hero-description">A curated collection of academic essays showcasing critical thinking, research, and writing excellence.</p>
+            <div class="hero-actions">
+                <button class="btn-hero-primary" onclick="document.getElementById('essays').scrollIntoView({behavior: 'smooth'})">
+                    Browse Essays
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="btn-hero-secondary" onclick="showAddEssayModal()">Submit Your Essay</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalEssays">0</div>
+                    <div class="stat-label">Total Essays</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalCategories">0</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalAuthors">0</div>
+                    <div class="stat-label">Authors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section" id="essays">
+        <div class="container">
+            <div class="filter-header">
+                <h2 class="section-title">Featured Essays</h2>
+                <div class="filter-controls">
+                    <select id="categoryFilter" class="filter-select" onchange="filterEssays()">
+                        <option value="all">All Categories</option>
+                    </select>
+                    <div class="search-box">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 16L12.65 12.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search essays..." oninput="filterEssays()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essays Grid -->
+    <section class="essays-section">
+        <div class="container">
+            <div class="essays-grid" id="essaysGrid">
+                <!-- Essays will be dynamically loaded here -->
+            </div>
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">📝</div>
+                <h3>No Essays Found</h3>
+                <p>Start by adding your first essay to the collection.</p>
+                <button class="btn-primary" onclick="showAddEssayModal()">Add Your First Essay</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About This Platform</h2>
+                    <p class="about-description">This platform serves as a digital repository for English essays written by students. It provides a space to showcase academic writing, share ideas, and inspire fellow learners.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✍️</div>
+                            <div>
+                                <h4>Easy Publishing</h4>
+                                <p>Submit and manage your essays with ease</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📚</div>
+                            <div>
+                                <h4>Organized Collection</h4>
+                                <p>Browse essays by category and topic</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎓</div>
+                            <div>
+                                <h4>Academic Excellence</h4>
+                                <p>Learn from quality student writing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Essay<span class="brand-accent">Blog</span></h3>
+                    <p>Empowering students through academic writing</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 EssayBlog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add/Edit Essay Modal -->
+    <div class="modal" id="essayModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Essay</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <form id="essayForm" onsubmit="saveEssay(event)">
+                <div class="form-group">
+                    <label for="essayTitle">Essay Title *</label>
+                    <input type="text" id="essayTitle" required placeholder="Enter essay title">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="essayAuthor">Author Name *</label>
+                        <input type="text" id="essayAuthor" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="essayCategory">Category *</label>
+                        <select id="essayCategory" required>
+                            <option value="">Select category</option>
+                            <option value="Digital Ethics">Digital Ethics</option>
+                            <option value="Future Tech">Future Tech</option>
+                            <option value="Social Issues">Social Issues</option>
+                            <option value="Environment">Environment</option>
+                            <option value="Education">Education</option>
+                            <option value="Culture">Culture</option>
+                            <option value="Health">Health</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="essayExcerpt">Excerpt/Summary *</label>
+                    <textarea id="essayExcerpt" rows="3" required placeholder="Brief summary of your essay (2-3 sentences)"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="essayContent">Essay Content *</label>
+                    <textarea id="essayContent" rows="12" required placeholder="Write your full essay here..."></textarea>
+                </div>
+                <input type="hidden" id="essayId">
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <span id="submitBtnText">Publish Essay</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
