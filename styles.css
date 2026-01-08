@@ -92,6 +92,13 @@ body {
 .nav-brand {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .brand-title {
