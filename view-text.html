@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Introduction - English Essay Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .text-viewer-page {
+            padding: 6rem 2rem 2rem;
+            min-height: 100vh;
+            background: #f8f9fa;
+        }
+
+        .text-header {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .text-info h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .text-info p {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-base);
+        }
+
+        .btn-back:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .text-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 3rem;
+        }
+
+        .text-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-primary);
+            text-align: justify;
+        }
+
+        .text-not-found {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .text-not-found h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .text-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-back {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .text-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .text-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="assets/logo-1.png" alt="Telkom University" class="brand-logo">
+                    <h1 class="brand-title">Essay<span class="brand-accent">Blog</span></h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#students" class="nav-link">Students</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-viewer-page">
+        <div class="text-header">
+            <div class="text-info">
+                <h1 id="textTitle">Self-Introduction</h1>
+                <p id="textStudent">Student Assignment</p>
+            </div>
+            <a href="#" id="btnBack" class="btn-back">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Assignments
+            </a>
+        </div>
+
+        <div class="text-container" id="textContainer">
+            <!-- Text content will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Essay<span class="brand-accent">Blog</span></h3>
+                    <p>Empowering students through academic writing</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 EssayBlog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const studentName = urlParams.get('student');
+        const assignmentType = urlParams.get('type');
+
+        // Text content mapping for each student
+        const textMappings = {
+            'Muhammad Fajar Shodiq': {
+                'self-intro': {
+                    title: 'Create a Self-Introduction PARAGRAPH',
+                    student: 'Muhammad Fajar Shodiq',
+                    content: `My name is Muhammad Fajar Shodiq, and I am a fifth-semester student of Information Technology at Telkom University Surabaya. Recently, I have been exploring two things that I find really interesting: UI/UX design and padel. My passion for UI/UX design started when I realized how much a simple interface can affect the way people use technology. I like observing apps or websites, noticing which ones are easy to use and which ones feel confusing. From there, I enjoy sketching or making small prototypes, imagining how I could improve the user's experience. It is exciting to think that design can actually make life easier for many people. Outside of studying and design, I spend my free time playing padel. It is a sport that feels like a mix between tennis and squash, but easier to pick up, and very fun to play with friends. I like padel because it helps me stay active, while also giving me a chance to clear my mind from academic stress. It balances my routine between creative thinking and physical activity. That is why I often encourage others to try padel if they want a sport that is both simple and enjoyable. At the same time, I also recommend exploring UI/UX design for those interested in technology, because it is a skill that combines creativity and problem-solving. Both of these passions keep me motivated and excited for the future.`
+                }
+            },
+            "A'isyah Belqis Febi Aulia": {
+                'self-intro': {
+                    title: 'Create a Self-Introduction PARAGRAPH',
+                    student: "A'isyah Belqis Febi Aulia",
+                    content: `Hallo! I'm Aisyah Belqis Febi Aulia, a proud native of Surabaya, and I've found my true passion not in the city's hustle, but right in my own kitchen. Baking for me is more than just a hobby; it's a form of therapy that I highly recommend you try. My journey is quite serious I actually have a formal background in pastry from vocational high school (SMK), and I've successfully run my own home industry bakery. This taught me that behind every perfect crumb lies both art and science, and that disciplined focus is key. If you're feeling burned out by the daily grind, trust me, baking is the perfect escape. When you're busy weighing ingredients or watching a cake rise, all those deadlines and phone notifications instantly vanish. It's a productive form of self care that yields delicious results! I urge you to grab an apron and take the plunge. You don't need to aim for a perfect croissant right away; start with the simplest cookie recipe this week. The satisfaction of slicing into a warm loaf or serving your own creation whether it's to family or customers is unmatched. Don't let your creative energy stagnate let's turn your kitchen into a sweet laboratory of success!`
+                }
+            },
+            'Athallah Zaki Ramatiansyah': {
+                'self-intro': {
+                    title: 'Create a Self-Introduction PARAGRAPH',
+                    student: 'Athallah Zaki Ramatiansyah',
+                    content: `Hi, I'm Athallah Zaki Ramatiansyah, I'm eager to share a glimpse into my life that might spark your interest. I'm originally from Bangkalan, Madura, a fascinating place on Madura Island known for its vibrant culture, including the iconic karapan sapi (bull racing) and beautiful coastal views—it's a hidden gem that absolutely deserves a visit for anyone looking for authentic Indonesian culture and great food. In my downtime, I'm a passionate photographer and a dedicated music listener, always searching for the perfect shot or the next incredible song. Photography isn't just about taking pictures for me; it's about capturing a unique feeling or story in a single frame, and I truly believe everyone should try it. you'd be surprised at the new perspectives it offers on your daily life. More importantly, my biggest goal for the future is to launch my own business. I'm currently laying the groundwork for an exciting venture, and I'd love for you to follow my journey; your support and interest will be an essential part of making this dream a reality. Whether it's the rich tapestry of my hometown, the creative escape of my hobbies, or the hustle of my entrepreneurial future, I hope something here inspires you to explore something new!`
+                }
+            },
+            'Davin Syah Putra Antoro': {
+                'self-intro': {
+                    title: 'Create a Self-Introduction PARAGRAPH',
+                    student: 'Davin Syah Putra Antoro',
+                    content: `While my academic life as an Information Technology student at Telkom University Surabaya is filled with code and digital logic, my true sense of freedom comes alive on the open road. For me, riding my motorcycle is far more than a hobby; it's a powerful way to connect with the world directly. Growing up in Sidoarjo and being born in the bustling city of Surabaya, I've learned that the best way to truly experience a place is not from behind a car window, but by feeling the wind and hearing the sounds of the streets. On my bike, I can explore hidden alleys in Sidoarjo to find the best local lontong kupang stall or navigate the vibrant energy of Surabaya to discover a new coffee shop. This isn't about speed; it's about the liberating feeling of discovery and the unfiltered connection to my surroundings. I strongly persuade you to try exploring your own city on two wheels. It transforms a familiar place into a grand adventure, offering a unique perspective and a sense of independence that is both thrilling and deeply refreshing. It's an invitation to see the world differently.`
+                }
+            }
+            // Add more students here as needed
+        };
+
+        // Function to load text content
+        function loadText() {
+            const textContainer = document.getElementById('textContainer');
+            const textTitle = document.getElementById('textTitle');
+            const textStudent = document.getElementById('textStudent');
+            const btnBack = document.getElementById('btnBack');
+
+            // Set back button link
+            if (studentName) {
+                btnBack.href = `assignments.html?name=${encodeURIComponent(studentName)}`;
+            } else {
+                btnBack.href = 'index.html#students';
+            }
+
+            // Check if student and assignment type exist
+            if (studentName && assignmentType && textMappings[studentName] && textMappings[studentName][assignmentType]) {
+                const textData = textMappings[studentName][assignmentType];
+                
+                // Update header
+                textTitle.textContent = textData.title;
+                textStudent.textContent = `By ${textData.student}`;
+                
+                // Display content
+                textContainer.innerHTML = `<p class="text-content">${textData.content}</p>`;
+            } else {
+                // Content not found
+                textContainer.innerHTML = `
+                    <div class="text-not-found">
+                        <h2>Content Not Available</h2>
+                        <p>The requested content could not be found or hasn't been uploaded yet.</p>
+                        <a href="${btnBack.href}" class="btn-back">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Back to Assignments
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        // Load text when page loads
+        document.addEventListener('DOMContentLoaded', loadText);
+    </script>
+</body>
+</html>

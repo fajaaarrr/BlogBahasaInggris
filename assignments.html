@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Assignments - English Essay Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="assets/logo-1.png" alt="Telkom University" class="brand-logo">
+                    <h1 class="brand-title">Essay<span class="brand-accent">Blog</span></h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#students" class="nav-link">Students</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="assignments-page">
+        <div class="container">
+            <div class="assignments-header">
+                <h1 class="section-title">Assignments</h1>
+                <p class="section-subtitle">Click on any card to view the full content for <span id="studentName">Student</span></p>
+            </div>
+
+            <div class="assignments-grid">
+                <!-- Self Introduction -->
+                <div class="assignment-card card-blue" id="selfIntroCard" onclick="openSelfIntro()">
+                    <div class="card-icon-bg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="assignment-title">Create a Self-Introduction PARAGRAPH</h3>
+                        <button class="btn-read-more">
+                            <span class="btn-icon-square"></span> Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Journal Review -->
+                <div class="assignment-card card-green" id="journalReviewCard" onclick="openJournalReview()">
+                    <div class="card-icon-bg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 13H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 17H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 9H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="assignment-title">Review or Summary of a Journal Article</h3>
+                        <button class="btn-read-more">
+                            <span class="btn-icon-square"></span> Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Final Written Essay -->
+                <div class="assignment-card card-purple" id="finalEssayCard" onclick="openFinalEssay()">
+                    <div class="card-icon-bg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.5 2.50001C18.8978 2.10219 19.4374 1.87869 20 1.87869C20.5626 1.87869 21.1022 2.10219 21.5 2.50001C21.8978 2.89784 22.1213 3.4374 22.1213 4.00001C22.1213 4.56262 21.8978 5.10219 21.5 5.50001L12 15L8 16L9 12L18.5 2.50001Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.5 2.50001C18.8978 2.10219 19.4374 1.87869 20 1.87869C20.5626 1.87869 21.1022 2.10219 21.5 2.50001C21.8978 2.89784 22.1213 3.4374 22.1213 4.00001C22.1213 4.56262 21.8978 5.10219 21.5 5.50001L12 15L8 16L9 12L18.5 2.50001Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="assignment-title">Final Written Essay Submission</h3>
+                        <button class="btn-read-more">
+                            <span class="btn-icon-square"></span> Read More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Presentation Slides -->
+                <div class="assignment-card card-orange" id="presentationCard" onclick="openPresentationSlides()">
+                    <div class="card-icon-bg">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C10.8954 2 10 2.89543 10 4V12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12V4C14 2.89543 13.1046 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 10V12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 19V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content-wrapper">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C10.8954 2 10 2.89543 10 4V12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12V4C14 2.89543 13.1046 2 12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19 10V12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 19V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 22H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="assignment-title">Presentation Slides</h3>
+                        <button class="btn-read-more">
+                            <span class="btn-icon-square"></span> Read More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Essay<span class="brand-accent">Blog</span></h3>
+                    <p>Empowering students through academic writing</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 EssayBlog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get student info from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const studentName = urlParams.get('name');
+        let studentEssayId = null;
+        
+        if (studentName) {
+            document.getElementById('studentName').textContent = studentName;
+            
+            // Find essay ID for this student
+            const stored = localStorage.getItem('essays');
+            if (stored) {
+                const essays = JSON.parse(stored);
+                // Try to find exact match or partial match
+                const essay = essays.find(e => e.author === studentName);
+                if (essay) {
+                    studentEssayId = essay.id;
+                }
+            }
+        } else {
+            document.getElementById('studentName').textContent = "Student";
+        }
+
+        // Open the final essay
+        function openFinalEssay() {
+            if (studentEssayId) {
+                window.location.href = 'read-essay.html?id=' + studentEssayId;
+            } else {
+                alert('No essay found for this student yet.');
+            }
+        }
+
+        // Open journal review PDF
+        function openJournalReview() {
+            if (studentName) {
+                // Check if student has a journal review PDF
+                const hasJournalReview = studentName === 'Muhammad Fajar Shodiq' || studentName === "A'isyah Belqis Febi Aulia" || studentName === 'Athallah Zaki Ramatiansyah' || studentName === 'Davin Syah Putra Antoro';
+                
+                if (hasJournalReview) {
+                    window.location.href = 'view-pdf.html?student=' + encodeURIComponent(studentName) + '&type=journal-review';
+                } else {
+                    alert('Journal review PDF has not been uploaded for this student yet.');
+                }
+            } else {
+                alert('Student information not found.');
+            }
+        }
+
+        // Open presentation slides PDF
+        function openPresentationSlides() {
+            if (studentName) {
+                // Check if student has presentation slides PDF
+                const hasPresentationSlides = studentName === 'Muhammad Fajar Shodiq' || studentName === "A'isyah Belqis Febi Aulia" || studentName === 'Athallah Zaki Ramatiansyah' || studentName === 'Davin Syah Putra Antoro';
+                
+                if (hasPresentationSlides) {
+                    window.location.href = 'view-pdf.html?student=' + encodeURIComponent(studentName) + '&type=presentation-slides';
+                } else {
+                    alert('Presentation slides PDF has not been uploaded for this student yet.');
+                }
+            } else {
+                alert('Student information not found.');
+            }
+        }
+
+        // Open self-introduction text
+        function openSelfIntro() {
+            if (studentName) {
+                // Check if student has self-introduction content
+                const hasSelfIntro = studentName === 'Muhammad Fajar Shodiq' || studentName === "A'isyah Belqis Febi Aulia" || studentName === 'Athallah Zaki Ramatiansyah' || studentName === 'Davin Syah Putra Antoro';
+                
+                if (hasSelfIntro) {
+                    window.location.href = 'view-text.html?student=' + encodeURIComponent(studentName) + '&type=self-intro';
+                } else {
+                    alert('Self-introduction has not been uploaded for this student yet.');
+                }
+            } else {
+                alert('Student information not found.');
+            }
+        }
+    </script>
+</body>
+</html>

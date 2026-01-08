@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer - English Essay Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pdf-viewer-page {
+            padding: 6rem 2rem 2rem;
+            min-height: 100vh;
+            background: #f8f9fa;
+        }
+
+        .pdf-header {
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .pdf-info h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .pdf-info p {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+        }
+
+        .pdf-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-base);
+        }
+
+        .btn-back:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-primary);
+            border: none;
+            border-radius: var(--radius-sm);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-base);
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .pdf-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: 85vh;
+            border: none;
+        }
+
+        .pdf-fallback {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .pdf-fallback h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .pdf-fallback p {
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .pdf-not-found {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .pdf-not-found h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pdf-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .btn-back,
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="assets/logo-1.png" alt="Telkom University" class="brand-logo">
+                    <h1 class="brand-title">Essay<span class="brand-accent">Blog</span></h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#students" class="nav-link">Students</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pdf-viewer-page">
+        <div class="pdf-header">
+            <div class="pdf-info">
+                <h1 id="pdfTitle">PDF Document</h1>
+                <p id="pdfStudent">Student Assignment</p>
+            </div>
+            <div class="pdf-actions">
+                <a href="#" id="btnBack" class="btn-back">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back to Assignments
+                </a>
+                <a href="#" id="btnDownload" class="btn-download" download>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 13V3M10 13L7 10M10 13L13 10M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Download PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="pdf-container" id="pdfContainer">
+            <!-- PDF will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Essay<span class="brand-accent">Blog</span></h3>
+                    <p>Empowering students through academic writing</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 EssayBlog. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const studentName = urlParams.get('student');
+        const assignmentType = urlParams.get('type');
+
+        // PDF mapping for each student
+        const pdfMappings = {
+            'Muhammad Fajar Shodiq': {
+                'journal-review': {
+                    file: 'assets/pdfs/PAPER SUMMARY ASSIGNMENT_1202230045_MUHAMMAD FJAR SHODIQ.pdf',
+                    title: 'Review or Summary of a Journal Article',
+                    student: 'Muhammad Fajar Shodiq'
+                },
+                'presentation-slides': {
+                    file: 'assets/pdfs/slide_muhammad fajar shodiq.pdf',
+                    title: 'Presentation Slides',
+                    student: 'Muhammad Fajar Shodiq'
+                }
+            },
+            "A'isyah Belqis Febi Aulia": {
+                'journal-review': {
+                    file: 'assets/pdfs/PAPPER SUMMARY ASSIGMENT-AISYAH BELQIS-1202230050 (1).pdf',
+                    title: 'Review or Summary of a Journal Article',
+                    student: "A'isyah Belqis Febi Aulia"
+                },
+                'presentation-slides': {
+                    file: 'assets/pdfs/Social Media Algorithms and the Psychological Impact on Online Shoppers- Aisyah Belqis Febi Aulia.pdf',
+                    title: 'Presentation Slides',
+                    student: "A'isyah Belqis Febi Aulia"
+                }
+            },
+            'Athallah Zaki Ramatiansyah': {
+                'journal-review': {
+                    file: 'assets/pdfs/ATHALLAH ZAKI RAMATIANSYAH_1202230051.pdf',
+                    title: 'Review or Summary of a Journal Article',
+                    student: 'Athallah Zaki Ramatiansyah'
+                },
+                'presentation-slides': {
+                    file: 'assets/pdfs/Bahasa Inggris Slide.pdf',
+                    title: 'Presentation Slides',
+                    student: 'Athallah Zaki Ramatiansyah'
+                }
+            },
+            'Davin Syah Putra Antoro': {
+                'journal-review': {
+                    file: 'assets/pdfs/DAVIN SYAH PUTRA ANTORO_1202230054_WRITING A JOURNAL SUMMARY.pdf',
+                    title: 'Review or Summary of a Journal Article',
+                    student: 'Davin Syah Putra Antoro'
+                },
+                'presentation-slides': {
+                    file: 'assets/pdfs/The Digital Paradigm Shift.pdf (1).pdf',
+                    title: 'Presentation Slides',
+                    student: 'Davin Syah Putra Antoro'
+                }
+            }
+            // Add more students here as needed
+        };
+
+        // Function to load PDF
+        function loadPDF() {
+            const pdfContainer = document.getElementById('pdfContainer');
+            const pdfTitle = document.getElementById('pdfTitle');
+            const pdfStudent = document.getElementById('pdfStudent');
+            const btnBack = document.getElementById('btnBack');
+            const btnDownload = document.getElementById('btnDownload');
+
+            // Set back button link
+            if (studentName) {
+                btnBack.href = `assignments.html?name=${encodeURIComponent(studentName)}`;
+            } else {
+                btnBack.href = 'index.html#students';
+            }
+
+            // Check if student and assignment type exist
+            if (studentName && assignmentType && pdfMappings[studentName] && pdfMappings[studentName][assignmentType]) {
+                const pdfData = pdfMappings[studentName][assignmentType];
+                
+                // Update header
+                pdfTitle.textContent = pdfData.title;
+                pdfStudent.textContent = `By ${pdfData.student}`;
+                
+                // Set download button
+                btnDownload.href = pdfData.file;
+                btnDownload.download = pdfData.file.split('/').pop();
+
+                // Create PDF embed
+                const embed = document.createElement('embed');
+                embed.className = 'pdf-embed';
+                embed.src = pdfData.file;
+                embed.type = 'application/pdf';
+                
+                // Fallback for browsers that don't support embed
+                const fallback = document.createElement('div');
+                fallback.className = 'pdf-fallback';
+                fallback.innerHTML = `
+                    <h2>PDF Preview Not Available</h2>
+                    <p>Your browser doesn't support PDF viewing. Please download the PDF to view it.</p>
+                    <a href="${pdfData.file}" download class="btn-download">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13V3M10 13L7 10M10 13L13 10M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Download PDF
+                    </a>
+                `;
+
+                pdfContainer.innerHTML = '';
+                pdfContainer.appendChild(embed);
+                pdfContainer.appendChild(fallback);
+            } else {
+                // PDF not found
+                pdfContainer.innerHTML = `
+                    <div class="pdf-not-found">
+                        <h2>PDF Not Available</h2>
+                        <p>The requested PDF document could not be found or hasn't been uploaded yet.</p>
+                        <a href="${btnBack.href}" class="btn-back">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Back to Assignments
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        // Load PDF when page loads
+        document.addEventListener('DOMContentLoaded', loadPDF);
+    </script>
+</body>
+</html>
